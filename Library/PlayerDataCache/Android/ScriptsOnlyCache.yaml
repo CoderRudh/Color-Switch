@@ -102,61 +102,61 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11332}
     - Class: 114
-      Script: {instanceID: 11580}
+      Script: {instanceID: 11582}
     - Class: 114
-      Script: {instanceID: 11810}
+      Script: {instanceID: 11812}
     - Class: 114
-      Script: {instanceID: 11838}
+      Script: {instanceID: 11840}
     - Class: 114
-      Script: {instanceID: 12002}
+      Script: {instanceID: 12004}
     - Class: 114
-      Script: {instanceID: 12154}
+      Script: {instanceID: 12156}
     - Class: 114
-      Script: {instanceID: 12248}
+      Script: {instanceID: 12250}
     - Class: 114
-      Script: {instanceID: 12300}
+      Script: {instanceID: 12302}
     - Class: 114
-      Script: {instanceID: 12324}
+      Script: {instanceID: 12326}
     - Class: 114
-      Script: {instanceID: 12534}
-    - Class: 114
-      Script: {instanceID: 12552}
+      Script: {instanceID: 12536}
     - Class: 114
       Script: {instanceID: 12554}
     - Class: 114
-      Script: {instanceID: 12950}
+      Script: {instanceID: 12556}
     - Class: 114
-      Script: {instanceID: 13084}
+      Script: {instanceID: 12952}
     - Class: 114
-      Script: {instanceID: 13296}
+      Script: {instanceID: 13088}
     - Class: 114
-      Script: {instanceID: 13314}
+      Script: {instanceID: 13300}
     - Class: 114
-      Script: {instanceID: 13458}
+      Script: {instanceID: 13318}
     - Class: 114
-      Script: {instanceID: 13606}
+      Script: {instanceID: 13462}
     - Class: 114
-      Script: {instanceID: 13708}
+      Script: {instanceID: 13610}
     - Class: 114
-      Script: {instanceID: 13810}
+      Script: {instanceID: 13712}
     - Class: 114
-      Script: {instanceID: 13964}
+      Script: {instanceID: 13814}
     - Class: 114
-      Script: {instanceID: 13986}
+      Script: {instanceID: 13968}
     - Class: 114
-      Script: {instanceID: 14006}
+      Script: {instanceID: 13990}
     - Class: 114
-      Script: {instanceID: 14114}
+      Script: {instanceID: 14010}
     - Class: 114
-      Script: {instanceID: 14128}
+      Script: {instanceID: 14118}
     - Class: 114
-      Script: {instanceID: 14184}
+      Script: {instanceID: 14132}
     - Class: 114
-      Script: {instanceID: 14194}
+      Script: {instanceID: 14188}
     - Class: 114
-      Script: {instanceID: 14220}
+      Script: {instanceID: 14198}
     - Class: 114
-      Script: {instanceID: 14336}
+      Script: {instanceID: 14224}
+    - Class: 114
+      Script: {instanceID: 14340}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -652,7 +652,7 @@ ScriptsOnlyBuild:
     className: BezierCurve
   - hash:
       serializedVersion: 2
-      Hash: 5a5bee89f2aa3c54c43faedc6b7cb0c9
+      Hash: 9384d89fdeff99bb3dd61537e9d3faaf
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -785,4 +785,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: D:/Unity Projects/Color Switch Replica/Builds/Test2.apk
+  playerPath: D:/Unity Projects/Color Switch Replica/Builds/ColorSwitch.apk

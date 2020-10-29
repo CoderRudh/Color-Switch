@@ -57,7 +57,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\IntroScript.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\BezierCurve.cs" />
     <Compile Include="Assets\Scripts\BezierFollow.cs" />
@@ -68,11 +67,14 @@
     <Compile Include="Assets\Scripts\DoubleCircles.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GeneratePatterns.cs" />
+    <Compile Include="Assets\Scripts\IntroScript.cs" />
     <Compile Include="Assets\Scripts\ManualChange.cs" />
     <Compile Include="Assets\Scripts\ObstacleRotator.cs" />
     <Compile Include="Assets\Scripts\PlayButtonCircles.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\PlayerData.cs" />
     <Compile Include="Assets\Scripts\PlayerFollow.cs" />
+    <Compile Include="Assets\Scripts\SaveSystem.cs" />
     <Compile Include="Assets\Scripts\Settings.cs" />
     <Compile Include="Assets\Scripts\SnapAroundRectangle.cs" />
     <Compile Include="Assets\Scripts\SplitStar.cs" />

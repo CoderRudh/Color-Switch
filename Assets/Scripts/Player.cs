@@ -81,6 +81,7 @@ public class Player : MonoBehaviour
     
     void Update()
     {
+        
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             // Check if finger is over a UI element
@@ -97,17 +98,9 @@ public class Player : MonoBehaviour
                     player.velocity = Vector2.up * jumpForce;
             }
         }
-        //if (canJump && Input.GetMouseButtonDown(0))// || Input.GetKeyDown(KeyCode.UpArrow))
-        //{
-            /*Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
-
-            RaycastHit2D rayHit = Physics2D.Raycast(mousePos2D, Vector2.zero);
-            if (rayHit.collider != null)
-            {
-                Debug.Log("BRUH");
-            }*/
-            /*
+        
+        /*if (canJump && Input.GetMouseButtonDown(0))// || Input.GetKeyDown(KeyCode.UpArrow))
+        {
             if (!(EventSystem.current.IsPointerOverGameObject() && EventSystem.current.currentSelectedGameObject != null &&
             EventSystem.current.currentSelectedGameObject.GetComponent<Button>() != null))
             {
@@ -136,6 +129,7 @@ public class Player : MonoBehaviour
 
     public void Reset()
     {
+        
         gameObject.SetActive(true);
         transform.position = initialPos;
         Camera.main.transform.position = cameraPos;
@@ -195,6 +189,7 @@ public class Player : MonoBehaviour
             score = int.Parse(Score.GetComponent<TMPro.TextMeshProUGUI>().text) + 1;
             Score.GetComponent<TMPro.TextMeshProUGUI>().text = score.ToString();
             GameManager obj = gameManager.GetComponent<GameManager>();
+            obj.starsCollected++;
             obj.StartCoroutine(obj.SpawnStars(col.transform));
             obj.StartCoroutine(obj.SpawnPlusOne(col.gameObject));
             obj.StartCoroutine(obj.AnimatePlusOne());

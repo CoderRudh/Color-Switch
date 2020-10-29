@@ -64,6 +64,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     GameObject SettingsPanel;
 
+    [SerializeField]
+    TMPro.TextMeshProUGUI starsCollectedText;
+
     List<GameObject> starClones;
 
     GameObject SettingsBack, PlayOrStopMusic, PlayOrStopSounds, MusicButton, SoundButton;
@@ -77,14 +80,33 @@ public class GameManager : MonoBehaviour
     Button playOrStopMusic, playOrStopSounds;
 
     //Animator settingsAnimation;
-    
+
     int numOfSmallBalls, numOfStars, bestScore;
+
+    [System.NonSerialized]
+    public int starsCollected;
+
     float musicAlpha, soundAlpha;
     bool soundOn, musicOn;
 
+    void Awake()
+    {
+        PlayerData data = SaveSystem.LoadData();
+        if(data == null)
+        {
+            starsCollected = 0;
+            bestScore = 0;
+        }
+        else
+        {
+            starsCollected = data.starsCollected;
+            bestScore = data.bestScore;
+        }
+    }
+
     void Start()
     {
-        bestScore = 0;
+        //bestScore = 0;
         soundOn = true;
         musicOn = true;
         musicAlpha = 1;
@@ -149,18 +171,21 @@ public class GameManager : MonoBehaviour
     void RestartGame()
     {
         audioManager.GetComponent<AudioManager>().Play("button");
+        SaveSystem.SaveData(starsCollected, bestScore);
         StartCoroutine(GameRestart());
     }
 
     void HomeAfterGameOver()
     {
         audioManager.GetComponent<AudioManager>().Play("button");
+        SaveSystem.SaveData(starsCollected, bestScore);
         StartCoroutine(HomeAfterGame());
     }
 
     void GoHome()
     {
         audioManager.GetComponent<AudioManager>().Play("button");
+        SaveSystem.SaveData(starsCollected, bestScore);
         StartCoroutine(GoToHome());
     }
 
@@ -196,6 +221,7 @@ public class GameManager : MonoBehaviour
     void SettingsToMain()
     {
         audioManager.GetComponent<AudioManager>().Play("button");
+        SaveSystem.SaveData(starsCollected, bestScore);
         StartCoroutine(BackToMain());
         //settingsAnimation.SetBool("goBack", true);
         //settingsAnimation.Play("BackToMain");
@@ -393,6 +419,9 @@ public class GameManager : MonoBehaviour
         bestScore = Mathf.Max(bestScore, score);
         ScoreScreen.transform.Find("BestScoreText").gameObject.GetComponent<TMPro.TextMeshProUGUI>().text = bestScore.ToString();
 
+        //SETTING STARS COLLECTED
+        starsCollectedText.text = starsCollected.ToString();
+
         Component[] images = ScoreScreen.GetComponentsInChildren<Image>();
         Component[] texts = ScoreScreen.GetComponentsInChildren<TMPro.TextMeshProUGUI>();
         foreach (Image image in images)
@@ -407,11 +436,13 @@ public class GameManager : MonoBehaviour
                                                                 ScoreScreen.GetComponent<Image>().color.g,
                                                                 ScoreScreen.GetComponent<Image>().color.b, 1);
         yield return new WaitForSeconds(2);
+        SaveSystem.SaveData(starsCollected, bestScore);
         ScoreScreen.SetActive(true);
     }
 
     IEnumerator GameRestart()
     {
+        Debug.Log("Lol");
         player.GetComponent<Player>().Reset();
         Component[] images = ScoreScreen.GetComponentsInChildren<Image>();
         Component[] texts = ScoreScreen.GetComponentsInChildren<TMPro.TextMeshProUGUI>();
@@ -672,4 +703,5 @@ public class GameManager : MonoBehaviour
         }
         //yield return new WaitForEndOfFrame();
     }
+
 }
